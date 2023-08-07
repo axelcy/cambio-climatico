@@ -17,10 +17,10 @@ function Password() {
     return (
         <main className='password-container no-select'>
             <section className='input-section'>
-                {/* <label htmlFor="mainInput"><h3>Ingrese su contraseña:</h3></label> */}
+                <label htmlFor="mainInput"><h3 className='text-bg'>Ingrese su contraseña:</h3></label>
                 <textarea placeholder='Ingrese su contraseña' id='mainInput' onChange={handleChange} ref={mainInput} className='main-input' rows={1}>
                 </textarea>
-                <span>{inputLength}</span>
+                <h5 className='text-bg'>{inputLength}</h5>
             </section>
             <section className='req-section'>
                 {
