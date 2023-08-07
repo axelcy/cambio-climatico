@@ -1,15 +1,19 @@
 export default [
     {
-        desc: "La contraseña debe tener al menos 8 caracteres"
+        desc: "La contraseña debe tener al menos 8 caracteres",
+        validar: (pass) => pass.length >= 8
     },
     {
-        desc: "La contraseña debe tener al menos un número"
+        desc: "La contraseña debe tener al menos un número",
+        validar: (pass) => /\d/.test(pass)
     },
     {
-        desc: "La contraseña debe incluir este emoji: ♻️"
+        desc: "La contraseña debe incluir este emoji: ♻️",
+        validar: (pass) => /♻️/.test(pass)
     },
     {
-        desc: "Es obligatorio que contenga las 3R: Reciclar, reducir y reutilizar."
+        desc: "Es obligatorio que contenga las 3R: Reciclar, reducir y reutilizar.",
+        validar: (pass) => /^(.*[rR]){3}$/.test(pass) && !/(.*[rR]){4}/.test(pass)
     }
 ]
 
