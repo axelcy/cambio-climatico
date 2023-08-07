@@ -7,6 +7,9 @@ export default [
     },
     {
         desc: "La contraseña debe incluir este emoji: ♻️"
+    },
+    {
+        desc: "Es obligatorio que contenga las 3R: Reciclar, reducir y reutilizar."
     }
 ]
 
