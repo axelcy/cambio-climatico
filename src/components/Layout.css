@@ -61,3 +61,7 @@ nav {
     transform: rotate(360deg);
   }
 }
+
+nav > *{
+  font-weight: bold;
+}
