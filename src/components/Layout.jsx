@@ -5,15 +5,11 @@ import './Layout.css'
 function Layout() {
     return (
         <>
-            <Navbar expand="lg" className="bg-body-tertiary layout-container">
-                <Container>
-                    <Link className="brand" to={'/'}>Password</Link>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto navbar-links">
-                            <Link to={'/reglas'}>Reglas</Link>
-                        </Nav>
-                    </Navbar.Collapse>
+            <Navbar expand="lg" className=" layout-container">
+                <Container className="navbar-brand-container">
+                    <Link className="brand" to={'/'}><img src="/favicon.ico" className="icon" /> Home</Link>
+                    {/* <Nav className="me-auto navbar-links"></Nav> */}
+                    <Link className="brand" to={'/reglas'}><img src="/rules.png" className="icon" /> Reglas</Link>
                 </Container>
             </Navbar>
 

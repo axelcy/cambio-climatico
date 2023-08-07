@@ -1,6 +1,8 @@
 .card-container{
-    background-color: rgba(255, 0, 0, .3);
-    border: 2px solid rgba(255, 0, 0, .5);
+    /* background-color: rgba(255, 0, 0, .3); */
+    background-color: rgba(255, 199, 199, 0.7);
+    /* border: 2px solid rgba(255, 0, 0, .5); */
+    border: 2px solid red;
     border-radius: 15px;
     min-height: 5rem;
     margin: 1rem;
@@ -10,9 +12,11 @@
     display: flex;
     vertical-align: middle;
     flex-direction: column;
+    transition: background-color .7s ease;
 }
 .card-valida{
-    background-color: rgba(143, 229, 147, 0.7) !important;
+    background-color: rgba(174, 243, 174, 0.7) !important;
+    border: 2px solid #267b30
 }
 
 .card-index{
