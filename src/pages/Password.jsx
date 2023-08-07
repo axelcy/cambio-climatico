@@ -19,7 +19,7 @@ function Password() {
             <section className='req-section'>
                 {
                     reglas.map((regla, index) => (
-                        <Card regla={regla} key={index} valida={regla.valida} />
+                        <Card regla={regla} index={index} key={index} valida={regla.valida} />
                     ))
                 }
             </section>

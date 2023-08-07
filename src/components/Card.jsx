@@ -1,11 +1,11 @@
 import './Card.css'
 
-const Card = ({regla, valida}) => {
+const Card = ({regla, valida, index}) => {
     var classList = "card-container no-select"
     if (valida) classList += " card-valida"
     return (
         <div className={classList}>
-            <h3>{regla.desc}</h3>
+            <h3>{index+1}. {regla.desc}</h3>
         </div>
     )
 }
