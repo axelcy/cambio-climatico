@@ -1,0 +1,8 @@
+.card-container{
+    background-color: rgba(255, 0, 0, .5);
+    border-radius: 15px;
+    height: 5rem;
+    margin: 1rem;
+    padding: 1rem;
+    width: 50%;
+}

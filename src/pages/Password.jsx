@@ -1,8 +1,11 @@
 import { useRef, useState } from 'react'
 import './Password.css'
+import reglasMock from '../mocks/reglas'
+import Card from '../components/Card'
 
 function Password() {
     const mainInput = useRef()
+    const reglas = reglasMock
 
     return (
         <main className='password-container'>
@@ -12,7 +15,11 @@ function Password() {
                 </textarea>
             </section>
             <section className='req-section'>
-
+                {
+                    reglas.map((regla) => (
+                        <Card regla={regla} />
+                    ))
+                }
             </section>
         </main>
     )
