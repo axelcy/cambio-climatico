@@ -9,7 +9,12 @@
     /* display: inherit; */
     display: flex;
     vertical-align: middle;
+    flex-direction: column;
 }
 .card-valida{
     background-color: rgba(143, 229, 147, 0.7) !important;
+}
+
+.card-index{
+    text-align: start;
 }
