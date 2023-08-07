@@ -10,3 +10,6 @@
     flex-direction: column;
     align-items: center;
 }
+.card-valida{
+    background-color: rgba(233, 190, 190, 0.5) !important;
+}

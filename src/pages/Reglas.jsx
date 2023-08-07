@@ -1,10 +1,10 @@
 
-function Logros() {
+function Reglas() {
     return (
         <>
-            <h1>Logros</h1>
+            <h1>Reglas</h1>
         </>
     )
 }
 
-export default Logros
+export default Reglas

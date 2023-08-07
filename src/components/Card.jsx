@@ -1,8 +1,10 @@
 import './Card.css'
 
-const Card = ({regla}) => {
+const Card = ({regla, valida}) => {
+    var classList = "card-container no-select"
+    if (valida) classList += " card-valida"
     return (
-        <div className="card-container no-select">
+        <div className={classList}>
             <h3>{regla.desc}</h3>
         </div>
     )
