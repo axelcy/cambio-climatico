@@ -12,11 +12,24 @@
     display: flex;
     vertical-align: middle;
     flex-direction: column;
-    transition: background-color .7s ease;
+
+    transition: transform 1s ease-in-out;
 }
 .card-valida{
     background-color: rgba(174, 243, 174, 0.9) !important;
-    border: 2px solid rgb(0, 173, 0)
+    border: 2px solid rgb(0, 173, 0);
+    animation: card-valida 1s ease-out forwards;
+    animation-delay: .5s;
+}
+
+@keyframes card-valida {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
 }
 
 .card-index{
