@@ -1,18 +1,23 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './Password.css'
 import reglasMock from '../mocks/reglas'
 import Card from '../components/Card'
 
 function Password() {
-    const [reglas] = useState(reglasMock)
-    const [reglasActivas, setReglasActivas] = useState(reglasMock)
-
+    const [reglasActivas, setReglasActivas] = useState([])
     const [inputLength, setInputLength] = useState(0)
+
+    const devolverNuevasReglas = (password) => {
+        let nuevasReglas = reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
+        nuevasReglas.filter(regla => !regla.valida)
+        return nuevasReglas.slice(0, 2)
+    }
     const handleInputChange = e => {
-        setReglasActivas(reglas.map(regla => ({...regla, valida: regla.validar(e.target.textContent)})))
-        // setReglas(reglas.map(regla => ({...regla, valida: regla.validar(e.target.textContent)})))
+        setReglasActivas(devolverNuevasReglas(e.target.textContent))
         setInputLength(e.target.textContent.length)
     }
+    
+    useEffect(() => setReglasActivas(devolverNuevasReglas(reglasActivas)), [])
 
     return (
         <main className='password-container no-select'>
@@ -24,7 +29,7 @@ function Password() {
             </section>
             <section className='req-section'>
                 {
-                    reglasActivas.map((regla, index) => (
+                    reglasActivas?.map((regla, index) => (
                         <Card regla={regla} index={index} key={index} valida={regla.valida} />
                     ))
                 }
