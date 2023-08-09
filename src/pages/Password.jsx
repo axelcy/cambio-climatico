@@ -4,10 +4,13 @@ import reglasMock from '../mocks/reglas'
 import Card from '../components/Card'
 
 function Password() {
-    const [reglas, setReglas] = useState(reglasMock)
+    const [reglas] = useState(reglasMock)
+    const [reglasActivas, setReglasActivas] = useState(reglasMock)
+
     const [inputLength, setInputLength] = useState(0)
     const handleInputChange = e => {
-        setReglas(reglas.map(regla => ({...regla, valida: regla.validar(e.target.textContent)})))
+        setReglasActivas(reglas.map(regla => ({...regla, valida: regla.validar(e.target.textContent)})))
+        // setReglas(reglas.map(regla => ({...regla, valida: regla.validar(e.target.textContent)})))
         setInputLength(e.target.textContent.length)
     }
 
@@ -21,7 +24,7 @@ function Password() {
             </section>
             <section className='req-section'>
                 {
-                    reglas.map((regla, index) => (
+                    reglasActivas.map((regla, index) => (
                         <Card regla={regla} index={index} key={index} valida={regla.valida} />
                     ))
                 }
