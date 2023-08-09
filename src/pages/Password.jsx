@@ -8,8 +8,16 @@ function Password() {
     const [inputLength, setInputLength] = useState(0)
 
     const devolverNuevasReglas = (password) => {
+        let cantValidas = 1
         let nuevasReglas = reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
-        nuevasReglas.filter(regla => !regla.valida)
+        nuevasReglas = nuevasReglas.filter(regla => {
+            if (regla.valida && cantValidas !== 0) {
+                cantValidas--
+                return true
+            }
+            if (regla.valida && cantValidas === 0) return false
+            return true
+        })
         return nuevasReglas.slice(0, 2)
     }
     const handleInputChange = e => {
@@ -29,7 +37,7 @@ function Password() {
             </section>
             <section className='req-section'>
                 {
-                    reglasActivas?.map((regla, index) => (
+                    reglasActivas.map((regla, index) => (
                         <Card regla={regla} index={index} key={index} valida={regla.valida} />
                     ))
                 }
