@@ -6,10 +6,12 @@ import Card from '../components/Card'
 function Password() {
     const [reglasActivas, setReglasActivas] = useState([])
     const [inputLength, setInputLength] = useState(0)
-
+    // hacer que te diga la complejidad de la contraseña (%) segun las reglas y longitud
+    // una barrita abajo del input con porcentaje
     const devolverNuevasReglas = (password) => {
         let cantValidas = 1
         let nuevasReglas = reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
+        return nuevasReglas
         nuevasReglas = nuevasReglas.filter(regla => {
             if (regla.valida && cantValidas !== 0) {
                 cantValidas--
@@ -41,9 +43,9 @@ function Password() {
                         <Card regla={regla} index={index} key={regla.id} valida={regla.valida} />
                     ))
                 }
-                {
+                {/* {
                     JSON.stringify(reglasActivas)
-                }
+                } */}
             </section>
         </main>
     )
