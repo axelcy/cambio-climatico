@@ -18,7 +18,7 @@ function Password() {
             if (regla.valida && cantValidas === 0) return false
             return true
         })
-        return nuevasReglas.slice(0, 2)
+        return nuevasReglas.slice(0, 3 - cantValidas)
     }
     const handleInputChange = e => {
         setReglasActivas(devolverNuevasReglas(e.target.textContent))
@@ -38,8 +38,11 @@ function Password() {
             <section className='req-section'>
                 {
                     reglasActivas.map((regla, index) => (
-                        <Card regla={regla} index={index} key={index} valida={regla.valida} />
+                        <Card regla={regla} index={index} key={regla.id} valida={regla.valida} />
                     ))
+                }
+                {
+                    JSON.stringify(reglasActivas)
                 }
             </section>
         </main>
