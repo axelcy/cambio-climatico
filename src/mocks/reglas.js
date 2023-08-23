@@ -32,7 +32,7 @@ export default [
     {
         id: 7,
         desc: "¿Que pais sufrio mas del cambio climatico en toda la historia?",
-        validar: (pass) => /CHAD/.test(pass)
+        validar: (pass) => /.*[CHAD]/.test(pass)
     },
     {
         id: 8,
