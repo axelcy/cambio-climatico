@@ -21,10 +21,35 @@ export default [
     },   
     {
         id: 5,
-        desc: "Cual de estas opciones contamina mas? 1)CO. 2)NO. 3)SO2.  ",
+        desc: "¿Cual de estas opciones contamina mas? 1)CO. 2)NO. 3)SO2.",
         validar: (pass) => /^(.*[rR]){3}$/.test(pass) && !/(.*[rR]){4}/.test(pass)
     },   
-
+    {
+        id: 6,
+        desc: "Ingresa la mayor temperatura registrada en Argentina hasta el dia de la fecha",
+        validar: (pass) => /49,1 /.test(pass)
+    },
+    {
+        id: 7,
+        desc: "¿Que pais sufrio mas del cambio climatico en toda la historia?",
+        validar: (pass) => /CHAD/.test(pass)
+    },
+    {
+        id: 8,
+        desc: "Cuantos tachos de basura diferente nos podriamos encontrar?",
+        validar: (pass) => /5/.test(pass)
+    },
+    {
+        id: 9,
+        desc: "Cuantos tachos de basura diferente nos podriamos encontrar?",
+        validar: (pass) => /5/.test(pass)
+    },
+    {
+        id: 10,
+        desc: "",
+        validar: (pass) => /5/.test(pass)
+    },
+]
 ]
 
 /*
