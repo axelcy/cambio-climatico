@@ -31,7 +31,7 @@ function Password() {
             <section className='input-section'>
                 <label htmlFor="mainInput"><h3 className='text-bg'>🔑 Ingrese su contraseña</h3></label>
                 <div contentEditable='true' placeholder='Ingrese su contraseña' id='mainInput' onInput={handleInputChange} className='main-input' />
-                <h5 contentEditable='false' className='text-bg input-length no-select'>{inputLength}</h5>          
+                <h5 className='text-bg input-length no-select'>{inputLength}</h5>         
             </section>
             <section className='req-section'>
                 {
