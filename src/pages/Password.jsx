@@ -7,7 +7,7 @@ import Card from '../components/Card'
 function Password() {
     const [reglasActivas, setReglasActivas] = useState([])
     const [inputLength, setInputLength] = useState(0)
-    const [strength, setStrength] = useState(75)
+    const [strength, setStrength] = useState(0)
     const strengthRef = useRef()
     const validarReglas = (password) => reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
 

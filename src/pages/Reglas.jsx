@@ -1,4 +1,3 @@
-
 function Reglas() {
     return (
         <>
