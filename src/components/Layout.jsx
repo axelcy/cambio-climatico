@@ -3,7 +3,6 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import './Layout.css'
 
 function Layout() {
-    // const reglasLink = () => '/reglas/' + document.getElementById('mainInput').textContent
     return (
         <>
             <Navbar expand="lg" className=" layout-container">
