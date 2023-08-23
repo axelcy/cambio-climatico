@@ -11,10 +11,12 @@ function Password() {
     const devolverNuevasReglas = (password) => {
         const reglas = reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
         let nuevasReglas = reglas.filter(regla => !regla.valida)
-        let reglasValidas = reglas.filter(regla => regla.valida)
-        reglasValidas = reglasValidas.reverse()
+        let reglasValidas = reglas.filter(regla => regla.valida).reverse()
+
+        nuevasReglas = nuevasReglas.slice(0, 3)
         reglasValidas[0] && nuevasReglas.unshift(reglasValidas[0])
-        return nuevasReglas.slice(0, 3)
+
+        return nuevasReglas
         
     }
     const handleInputChange = e => {
