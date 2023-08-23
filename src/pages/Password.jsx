@@ -23,6 +23,8 @@ function Password() {
     }
     const strengthCheck = (reglas) => {
         // porcentaje de completadas
+        let completadas = 0
+        reglas.forEach(regla => completadas++)
     }
     const handleInputChange = e => {
         let password = e.target.textContent

@@ -50,7 +50,6 @@ export default [
         validar: (pass) => /5/.test(pass)
     },
 ]
-]
 
 /*
 hacer preguntas con varias respuestas
