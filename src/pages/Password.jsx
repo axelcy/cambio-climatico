@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
+import { ProgressBar } from 'react-bootstrap'
 import './Password.css'
 import reglasMock from '../mocks/reglas'
 import Card from '../components/Card'
-import { ProgressBar } from 'react-bootstrap'
 
 function Password() {
     const [reglasActivas, setReglasActivas] = useState([])
