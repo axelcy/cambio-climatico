@@ -18,8 +18,8 @@
 .card-valida{
     background-color: rgba(174, 243, 174, 0.9) !important;
     border: 2px solid rgb(0, 173, 0);
-    animation: card-valida 1s ease-out forwards;
-    animation-delay: .5s;
+    /* animation: card-valida 1s ease-out forwards; */
+    /* animation-delay: .5s; */
 }
 
 @keyframes card-valida {

@@ -9,18 +9,13 @@ function Password() {
     // hacer que te diga la complejidad de la contraseña (%) segun las reglas y longitud
     // una barrita abajo del input con porcentaje
     const devolverNuevasReglas = (password) => {
-        let cantValidas = 1
-        let nuevasReglas = reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
-        return nuevasReglas
-        nuevasReglas = nuevasReglas.filter(regla => {
-            if (regla.valida && cantValidas !== 0) {
-                cantValidas--
-                return true
-            }
-            if (regla.valida && cantValidas === 0) return false
-            return true
-        })
-        return nuevasReglas.slice(0, 3 - cantValidas)
+        const reglas = reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
+        let nuevasReglas = reglas.filter(regla => !regla.valida)
+        let reglasValidas = reglas.filter(regla => regla.valida)
+        reglasValidas = reglasValidas.reverse()
+        reglasValidas[0] && nuevasReglas.unshift(reglasValidas[0])
+        return nuevasReglas.slice(0, 3)
+        
     }
     const handleInputChange = e => {
         setReglasActivas(devolverNuevasReglas(e.target.textContent))
@@ -33,8 +28,7 @@ function Password() {
         <main className='password-container no-select'>
             <section className='input-section'>
                 <label htmlFor="mainInput"><h3 className='text-bg'>🔑 Ingrese su contraseña</h3></label>
-                <div contentEditable='true' placeholder='Ingrese su contraseña' id='mainInput' onInput={handleInputChange} className='main-input'>   
-                </div>
+                <div contentEditable='true' placeholder='Ingrese su contraseña' id='mainInput' onInput={handleInputChange} className='main-input' />
                 <h5 contentEditable='false' className='text-bg input-length no-select'>{inputLength}</h5>          
             </section>
             <section className='req-section'>
@@ -43,9 +37,6 @@ function Password() {
                         <Card regla={regla} index={index} key={regla.id} valida={regla.valida} />
                     ))
                 }
-                {/* {
-                    JSON.stringify(reglasActivas)
-                } */}
             </section>
         </main>
     )
