@@ -6,22 +6,28 @@ import Card from '../components/Card'
 function Password() {
     const [reglasActivas, setReglasActivas] = useState([])
     const [inputLength, setInputLength] = useState(0)
+    const [strength, setStrength] = useState(0)
+
+    const validarReglas = (password) => reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
+
     // hacer que te diga la complejidad de la contraseña (%) segun las reglas y longitud
     // una barrita abajo del input con porcentaje
+
     const devolverNuevasReglas = (password) => {
-        const reglas = reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
+        const reglas = validarReglas(password)
         let nuevasReglas = reglas.filter(regla => !regla.valida)
         let reglasValidas = reglas.filter(regla => regla.valida).reverse()
-
         nuevasReglas = nuevasReglas.slice(0, 3)
         reglasValidas[0] && nuevasReglas.unshift(reglasValidas[0])
-
         return nuevasReglas
-        
+    }
+    const strengthCheck = (reglas) => {
     }
     const handleInputChange = e => {
-        setReglasActivas(devolverNuevasReglas(e.target.textContent))
-        setInputLength(e.target.textContent.length)
+        let password = e.target.textContent
+        setReglasActivas(devolverNuevasReglas(password))
+        setStrength(strengthCheck(validarReglas(password)))
+        setInputLength(password.length)
     }
     
     useEffect(() => setReglasActivas(devolverNuevasReglas(reglasActivas)), [])
