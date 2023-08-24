@@ -1,6 +1,51 @@
 .scroll-button{
     position: fixed;
-    bottom: 3rem;
-    right: 5rem;
-    transform: scale(200%);
+    bottom: 1rem;
+    right: 1rem;
+    /* transform: scale(200%); */
+    background-color: rgba(222, 233, 190, 0.9);
+    border: 1px solid yellow;
+    color: black;
+    height: 4rem;
+    width: 12rem;
+    font-size: 26px;
+}
+
+.article-reglas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-reglas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(190, 233, 190, 0.9);
+    border: 1px solid green;
+    border-radius: 10px;
+    height: 5rem;
+    margin: 1rem;
+    padding: 1.3rem;
+    width: 90vw;
+}
+
+.strengthMeter-reglas{
+    position: fixed;
+    bottom: 1rem;
+    --size: 60%;
+    width: var(--size);
+    right: calc((100% - var(--size)) / 2);
+    height: 30px !important;
+    align-self: center;
+    background-color: green;
+    /* border-top-left-radius: 0 !important; */
+    /* border-top-right-radius: 0 !important; */
+    /* border-top: none !important; */
+    border: 2px solid green;
+    margin-top: 0;
+    transition: all .2s ease-in;
+    --bs-progress-bg: rgba(190, 233, 190, 1) !important;
+    --bs-progress-bar-bg: rgb(0, 173, 0) !important;
+    box-shadow: 0 0 30px black;
 }

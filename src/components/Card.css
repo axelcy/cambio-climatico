@@ -16,19 +16,20 @@
     transition: transform 1s ease-in-out;
 }
 .card-valida{
-    background-color: rgba(174, 243, 174, 0.9) !important;
+    background-color: rgba(174, 243, 174, 0.9);
     border: 2px solid rgb(0, 173, 0);
-    /* animation: card-valida 1s ease-out forwards; */
-    /* animation-delay: .5s; */
+    animation: card-valida 1s ease-out;
 }
 
 @keyframes card-valida {
     0% {
-        transform: translateY(0);
+        /* transform: translate(-50px, 0); */
+        background-color: rgba(255, 199, 199, 0.9);
     }
     100% {
-        transform: translateY(100%);
-        opacity: 0;
+        /* transform: translate(0, 0); */
+        border: 2px solid rgb(0, 173, 0);
+        background-color: rgba(174, 243, 174, 0.9);
     }
 }
 

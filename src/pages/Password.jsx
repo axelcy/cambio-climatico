@@ -32,6 +32,7 @@ function Password() {
         const reglas = useRules(password)
         // useStrength devuelve un número entre 0 y 100 que representa la fuerza de la contraseña
         setStrength(useStrength(password))
+        localStorage.setItem('strength', useStrength(password))
         // handleReglasActivas devuelve un array con las reglas activas
         setReglasActivas(handleReglasActivas(reglas))
         setInputLength(password.length)
