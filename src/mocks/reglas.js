@@ -1,6 +1,7 @@
 // patter.test(string) => true | false
 // string.match(pattern) => null | array
-
+// Contraseña ganadora:
+// ChadAmarillo49♻COrrr
 export default [
     {
         id: 1,
@@ -15,7 +16,7 @@ export default [
     {
         id: 3,
         desc: 'La contraseña debe incluir este emoji: ♻️',
-        validar: (pass) => /♻️/.test(pass)
+        validar: (pass) => /♻️/.test(pass) || /♻/.test(pass)
     },
     {
         id: 4,

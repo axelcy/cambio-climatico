@@ -13,6 +13,14 @@ function Password() {
 
     const handleReglasActivas = (reglas) => {
         let nuevasReglas = reglas.filter(regla => !regla.valida).slice(0, 3)
+        if (!nuevasReglas.length) {
+            return [{
+                id: 'Final',
+                desc: 'Haberse divertido, no hay más reglas por ahora.',
+                opciones: 'Fin :)',
+                valida: true
+            }]
+        }
         let reglasValidas = reglas.filter(regla => regla.valida).reverse()
         reglasValidas.length && nuevasReglas.unshift(reglasValidas[0])
         return nuevasReglas
@@ -34,6 +42,7 @@ function Password() {
         document.getElementById('mainInput').textContent = localStorage.getItem('password') || ''
         // acomodar las reglas activas según la contraseña guardada en localStorage
         setReglasActivas(handleReglasActivas(useRules(localStorage.getItem('password'))))
+        setStrength(useStrength(localStorage.getItem('password')))
     }, [])
 
     return (
