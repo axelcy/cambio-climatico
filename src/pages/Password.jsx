@@ -3,16 +3,15 @@ import { ProgressBar } from 'react-bootstrap'
 import './Password.css'
 import reglasMock from '../mocks/reglas'
 import Card from '../components/Card'
+import useRules from '../hooks/useRules'
+import useStrength from '../hooks/useStrength'
 
 function Password() {
     const [reglasActivas, setReglasActivas] = useState([])
     const [inputLength, setInputLength] = useState(0)
     const [strength, setStrength] = useState(0)
 
-    const validarReglas = (password) => reglasMock.map(regla => ({...regla, valida: regla.validar(password)}))
-    const strengthCheck = (reglas) => Math.round(reglas.filter(regla => regla.valida).length / reglas.length * 100)
-
-    const actualizarReglas = (reglas) => {
+    const handleReglasActivas = (reglas) => {
         let nuevasReglas = reglas.filter(regla => !regla.valida).slice(0, 3)
         let reglasValidas = reglas.filter(regla => regla.valida).reverse()
         reglasValidas.length && nuevasReglas.unshift(reglasValidas[0])
@@ -20,23 +19,32 @@ function Password() {
     }
 
     const handleInputChange = e => {
-        const reglas = validarReglas(e.target.textContent)
-        setReglasActivas(actualizarReglas(reglas))
-        setStrength(strengthCheck(reglas))
-        setInputLength(e.target.textContent.length)
+        const password = e.target.textContent
+        // useRules devuelve un array de objetos con las reglas y si se cumplen o no
+        const reglas = useRules(password)
+        // useStrength devuelve un número entre 0 y 100 que representa la fuerza de la contraseña
+        setStrength(useStrength(password))
+        // handleReglasActivas devuelve un array con las reglas activas
+        setReglasActivas(handleReglasActivas(reglas))
+        setInputLength(password.length)
+        localStorage.setItem('password', e.target.textContent)
     }
     
-    useEffect(() => setReglasActivas(actualizarReglas(reglasMock)), [])
+    useEffect(() => {
+        document.getElementById('mainInput').textContent = localStorage.getItem('password') || ''
+        // acomodar las reglas activas según la contraseña guardada en localStorage
+        setReglasActivas(handleReglasActivas(useRules(localStorage.getItem('password'))))
+    }, [])
 
     return (
         <main className='password-container no-select'>
             <section className='input-section'>
                 <label htmlFor="mainInput"><h3 className='text-bg'>🔑 Ingrese su contraseña</h3></label>
-                <div className='input-container'>
+                <article className='input-container'>
                     <div contentEditable='true' placeholder='Ingrese su contraseña' id='mainInput' onInput={handleInputChange} className='main-input' />
                     <h5 className='text-bg strength'>🔒 Fuerza: {strength}%</h5>
                     <ProgressBar className='strengthMeter' animated now={strength} max={100} min={0} />
-                </div>
+                </article>
                 <h5 className='text-bg input-length no-select'>{inputLength}</h5>
             </section>
             <section className='req-section'>

@@ -3,7 +3,7 @@ import './App.css'
 import Layout from './components/Layout'
 import Password from './pages/Password'
 import Reglas from './pages/Reglas'
-
+// Más adelante, tal vez implementar logros
 function App() {
   return (
     <BrowserRouter>
