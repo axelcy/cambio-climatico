@@ -1,61 +1,48 @@
+// patter.test(string) => true | false
+// string.match(pattern) => null | array
+
 export default [
     {
         id: 1,
-        desc: "La contraseña debe tener al menos 8 caracteres",
+        desc: 'La contraseña debe tener al menos 8 caracteres',
         validar: (pass) => pass.length >= 8
     },
     {
         id: 2,
-        desc: "La contraseña debe tener al menos un número",
+        desc: 'La contraseña debe tener al menos un número',
         validar: (pass) => /\d/.test(pass)
     },
     {
         id: 3,
-        desc: "La contraseña debe incluir este emoji: ♻️",
+        desc: 'La contraseña debe incluir este emoji: ♻️',
         validar: (pass) => /♻️/.test(pass)
     },
     {
         id: 4,
-        desc: "Es obligatorio que contenga las 3R: Reciclar, reducir y reutilizar.",
-        validar: (pass) => /^(.*[rR]){3}$/.test(pass) && !/(.*[rR]){4}/.test(pass)
+        desc: 'Es obligatorio que contenga las 3R: Reciclar, reducir y reutilizar.',
+        // validar: (pass) => /^(.*[rR]){3}/.test(pass) && !/(.*[rR]){4}/.test(pass)
+        validar: (pass) => /R{3}/i.test(pass) && !/R{4}/i.test(pass)
     },   
     {
         id: 5,
-        desc: "¿Cual de estas opciones contamina mas? 1)CO. 2)NO. 3)SO2.",
-        validar: (pass) => /^(.*[rR]){3}$/.test(pass) && !/(.*[rR]){4}/.test(pass)
+        desc: '¿Cual de estas opciones contamina mas?',
+        opciones: '1) CO 2) Na 3) CaCl2',
+        validar: (pass) => /CO/.test(pass),
     },   
     {
         id: 6,
-        desc: "Ingresa la mayor temperatura registrada en Argentina hasta el dia de la fecha",
-        validar: (pass) => /49,1 /.test(pass)
+        desc: 'Ingresá la mayor temperatura registrada en Argentina hasta el momento',
+        validar: (pass) => /49/.test(pass)
     },
     {
         id: 7,
-        desc: "¿Que pais sufrio mas del cambio climatico en toda la historia?",
-        validar: (pass) => /.*[CHAD]/.test(pass)
+        desc: '¿Cuál es el país más vulnerable al cambio climatico?',
+        validar: (pass) => /chad/i.test(pass)
     },
     {
-        id: 8,
-        desc: "Cuantos tachos de basura diferente nos podriamos encontrar?",
-        validar: (pass) => /5/.test(pass)
-    },
-    {
-        id: 9,
-        desc: "Cuantos tachos de basura diferente nos podriamos encontrar?",
-        validar: (pass) => /5/.test(pass)
-    },
-    {
-        id: 10,
-        desc: "",
-        validar: (pass) => /5/.test(pass)
+        id: 8, // esta pregunta me parece la lata
+        desc: '¿De qué color es el tacho de "Plásticos y metales"?',
+        img: 'regla_8.jpg',
+        validar: (pass) => /amarillo/i.test(pass)
     },
 ]
-
-/*
-hacer preguntas con varias respuestas
-ej: ¿qué contamina más?
-A: asdasdsa
-B: asddas
-C: tSfsdfds
-poner el resulado en la password
-*/

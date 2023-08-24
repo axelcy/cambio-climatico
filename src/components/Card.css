@@ -35,3 +35,12 @@
 .card-index{
     text-align: start;
 }
+
+.card-img{
+    padding: 1rem;
+}
+
+.card-img-8{
+    object-fit: cover;
+    filter: grayscale(1);
+}
