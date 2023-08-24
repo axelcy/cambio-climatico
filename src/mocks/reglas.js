@@ -20,8 +20,9 @@ export default [
     },
     {
         id: 4,
-        desc: 'Es obligatorio que contenga las 3R: Reciclar, reducir y reutilizar.',
-        validar: (pass) => /R{3}/i.test(pass) && !/R{4}/i.test(pass)
+        desc: 'Es obligatorio que contenga 3 "R".',
+        opciones: 'Reciclar, reducir y reutilizar.',
+        validar: (pass) => /R{3}/i.test(pass)
     },   
     {
         id: 5,
