@@ -16,7 +16,7 @@ function Reglas() {
 
     return (
         <main>
-            <label htmlFor="mainInput"><h1 className='titulo-reglas'>Lista de reglas 📜</h1></label>
+            <label className='no-select'><h1 className='titulo-reglas'>Lista de reglas 📜</h1></label>
             <article className='article-reglas'>
                 {
                     reglas?.map((regla, index) => (
