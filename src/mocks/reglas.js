@@ -15,13 +15,14 @@ export default [
     },
     {
         id: 3,
-        desc: 'La contraseña debe incluir este emoji: ♻️',
+        desc: 'Es obligatoria la inclusión de este emoji: ♻️',
         validar: (pass) => /♻️/.test(pass) || /♻/.test(pass)
     },
     {
         id: 4,
-        desc: 'Es obligatorio que contenga 3 "R".',
-        opciones: 'Reciclar, reducir y reutilizar.',
+        desc: 'La contraseña debe contar con 3 "R".',
+        ocultarTexto: true,
+        opciones: 'Una solución al cambio climático es: Reciclar, reducir y reutilizar.',
         validar: (pass) => pass.length - pass.replace(/r/gi, '').length === 3
     },   
     {
@@ -32,7 +33,7 @@ export default [
     },   
     {
         id: 6,
-        desc: 'Ingresá la mayor temperatura registrada en Argentina hasta el momento',
+        desc: 'Ingresá la mayor temperatura registrada en Argentina hasta el momento.',
         validar: (pass) => /49/.test(pass)
     },
     {
@@ -48,8 +49,26 @@ export default [
     },
     {
         id: 9,
-        desc: 'El cambio climático está presente desde la Revolución industrial.',
-        opciones: 'Verdadero / Falso',
-        validar: (pass) => /Verdadero/i.test(pass)
+        desc: 'El cambio climático está presente desde la Revolución . . . ',
+        opciones: 'Francesa / Industrial / Rusa',
+        validar: (pass) => /industrial/i.test(pass)
+    },
+    {
+        id: 10,
+        desc: '¿Qué derretimiento preocupa en los polos?',
+        opciones: 'Nieve / Glaciares / Hielo',
+        validar: (pass) => /Glaciares/i.test(pass)
+    },
+    {
+        id: 11,
+        desc: '¿En qué mes cae el día internacional del medio ambiente?',
+        img: 'regla_11.jpg',
+        validar: (pass) => /Octubre/i.test(pass)
+    },
+    {
+        id: 11,
+        desc: '¿Qué medida reduce la huella de carbono?',
+        opciones: 'Reciclaje / Transporte público / Plásticos desechables',
+        validar: (pass) => /Reciclaje/i.test(pass)
     },
 ]
