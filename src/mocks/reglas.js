@@ -23,7 +23,7 @@ export default [
         desc: 'La contraseña debe contar con 3 "R".',
         ocultarTexto: true,
         opciones: 'Una solución al cambio climático es: Reciclar, reducir y reutilizar.',
-        validar: (pass) => pass.length - pass.replace(/r/gi, '').length === 3
+        validar: (pass) => pass.length - pass.replace(/r/gi, '').length >= 3
     },   
     {
         id: 5,
