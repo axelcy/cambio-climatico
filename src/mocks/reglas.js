@@ -66,7 +66,7 @@ export default [
         validar: (pass) => /Octubre/i.test(pass)
     },
     {
-        id: 11,
+        id: 12,
         desc: '¿Qué medida reduce la huella de carbono?',
         opciones: 'Reciclaje / Transporte público / Plásticos desechables',
         validar: (pass) => /Reciclaje/i.test(pass)
