@@ -12,7 +12,7 @@ function Password() {
     const [strength, setStrength] = useState(0)
 
     const handleReglasActivas = (reglas) => {
-        let nuevasReglas = reglas.filter(regla => !regla.valida).slice(0, 2)
+        let nuevasReglas = reglas.filter(regla => !regla.valida).slice(0, 3)
         if (!nuevasReglas.length) {
             return [{
                 id: 'Final',
@@ -22,7 +22,7 @@ function Password() {
             }]
         }
         let reglasValidas = reglas.filter(regla => regla.valida).reverse()
-        reglasValidas.length && reglasValidas.slice(0, 2).forEach(regla => nuevasReglas.push(regla))
+        reglasValidas.length && nuevasReglas.unshift(reglasValidas[0])
         return nuevasReglas
     }
 
