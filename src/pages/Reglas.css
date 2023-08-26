@@ -10,7 +10,9 @@
     width: 12rem;
     font-size: 26px;
 }
-
+.main-reglas{
+    padding-bottom: 3rem;
+}
 .article-reglas{
     display: flex;
     flex-direction: column;

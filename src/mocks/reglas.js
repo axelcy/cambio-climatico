@@ -22,12 +22,14 @@ export default [
         id: 4,
         desc: 'Es obligatorio que contenga 3 "R".',
         opciones: 'Reciclar, reducir y reutilizar.',
-        validar: (pass) => /R{3}/i.test(pass) // hacer que busque 3 R por separado.
+        // validar: (pass) => /R{3}/i.test(pass) // hacer que busque 3 R por separado.
+        // validar: (pass) =>  // hacer que busque 3 R por separado.
+        validar: (pass) => pass.length - pass.replace(/r/gi, '').length === 3
     },   
     {
         id: 5,
         desc: '¿Cual de estas opciones contamina mas?',
-        opciones: '1) CO 2) Na 3) CaCl2',
+        opciones: 'CO / Na / CaCl2',
         validar: (pass) => /CO/.test(pass),
     },   
     {
@@ -41,9 +43,15 @@ export default [
         validar: (pass) => /chad/i.test(pass)
     },
     {
-        id: 8, // esta pregunta me parece la lata
+        id: 8,
         desc: '¿De qué color es el tacho de "Plásticos y metales"?',
         img: 'regla_8.jpg',
         validar: (pass) => /amarillo/i.test(pass)
+    },
+    {
+        id: 9,
+        desc: 'El cambio climático está presente desde la Revolución industrial.',
+        opciones: 'Verdadero / Falso',
+        validar: (pass) => /Verdadero/i.test(pass)
     },
 ]

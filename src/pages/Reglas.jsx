@@ -15,7 +15,7 @@ function Reglas() {
     }, [localStorage.getItem('password')])
 
     return (
-        <main>
+        <main className='main-reglas'>
             <label className='no-select'><h1 className='titulo-reglas'>Lista de reglas 📜</h1></label>
             <article className='article-reglas'>
                 {
