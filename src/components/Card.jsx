@@ -10,7 +10,7 @@ const Card = ({regla, valida, index}) => {
                 {!regla.ocultarTexto && <span>La contraseña debe incluir la respuesta correcta.</span>}
                 <h5>{regla.opciones}</h5>
             </>}
-            {regla.img && <img src={"/reglas/" + regla.img} className={`card-img card-img-${regla.id}`} />}
+            {regla.img && <img src={"reglas/" + regla.img} className={`card-img card-img-${regla.id}`} />}
         </div>
     )
 }
