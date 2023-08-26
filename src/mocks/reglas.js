@@ -22,8 +22,6 @@ export default [
         id: 4,
         desc: 'Es obligatorio que contenga 3 "R".',
         opciones: 'Reciclar, reducir y reutilizar.',
-        // validar: (pass) => /R{3}/i.test(pass) // hacer que busque 3 R por separado.
-        // validar: (pass) =>  // hacer que busque 3 R por separado.
         validar: (pass) => pass.length - pass.replace(/r/gi, '').length === 3
     },   
     {
