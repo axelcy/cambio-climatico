@@ -8,10 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/cambio-climatico/' element={<Layout />} >
+        <Route path='/' element={<Layout />} >
           <Route index element={<Password />} />
-          <Route path='/cambio-climatico/reglas' element={<Reglas />} />
-          <Route path='/cambio-climatico/*' element={<h1>Error 404</h1>} />
+          <Route path='/reglas' element={<Reglas />} />
+          <Route path='/*' element={<h1>Error 404</h1>} />
         </Route>
       </Routes>
     </BrowserRouter>
