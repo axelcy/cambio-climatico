@@ -39,7 +39,7 @@ export default [
     {
         id: 7,
         desc: '¿Cuál es el país más vulnerable al cambio climatico?',
-        validar: (pass) => /chad/i.test(pass)
+        validar: (pass) => /Chad/i.test(pass)
     },
     {
         id: 8,
