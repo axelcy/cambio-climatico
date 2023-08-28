@@ -17,6 +17,7 @@ function Password() {
             return [{
                 id: 'Final',
                 desc: 'Haberse divertido, no hay más reglas por ahora.',
+                ocultarTexto: true,
                 opciones: 'Fin :)',
                 valida: true
             }]
