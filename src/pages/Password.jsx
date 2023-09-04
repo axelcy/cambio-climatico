@@ -43,8 +43,8 @@ function Password() {
     useEffect(() => {
         document.getElementById('mainInput').textContent = localStorage.getItem('password') || ''
         // acomodar las reglas activas según la contraseña guardada en localStorage
-        setReglasActivas(handleReglasActivas(useRules(localStorage.getItem('password'))))
-        setStrength(useStrength(localStorage.getItem('password')))
+        setReglasActivas(handleReglasActivas(useRules(localStorage.getItem('password') || '')))
+        setStrength(useStrength(localStorage.getItem('password') || ''))
     }, [])
 
     return (
