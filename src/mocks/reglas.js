@@ -89,4 +89,34 @@ export default [
         opciones: 'arbol',
         validar: (pass) => /arbol/i.test(pass)
     },
+    {
+        id: 16,
+        desc: '¿De que nos protege la capa de Ozono?',
+        opciones: 'Radiacion / El calor / El sol',
+        validar: (pass) => /Radiacion/i.test(pass)
+    },
+    {
+        id: 17,
+        desc: 'Perdida de especies de animales, recursos y vegetales.',
+        opciones: 'Extincion',
+        validar: (pass) => /Extincion/i.test(pass)
+    },
+    {
+        id: 18,
+        desc: 'Evento natural que provoca deslizamientos de tierra',
+        opciones: 'Terremoto',
+        validar: (pass) => /Terremoto/i.test(pass)
+    },
+    {
+        id: 19,
+        desc: '¿El calentamiento global aumenta el nivel del...?',
+        opciones: 'Mar',
+        validar: (pass) => /Mar/i.test(pass)
+    },
+    {
+        id: 20,
+        desc: '¿Proceso natural para eliminar contaminantes?',
+        opciones: 'Extraccion / Depuracion / Radiacion',
+        validar: (pass) => /Depuracion/i.test(pass)
+    },
 ]
