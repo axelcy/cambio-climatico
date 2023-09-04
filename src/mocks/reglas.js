@@ -71,4 +71,22 @@ export default [
         opciones: 'Reciclaje / Transporte público / Plásticos desechables',
         validar: (pass) => /Reciclaje/i.test(pass)
     },
+    {
+        id: 13,
+        desc: '¿Área del planeta con mayor biodiversidad?',
+        opciones: 'Selva ',
+        validar: (pass) => /Selva/i.test(pass)
+    },
+    {
+        id: 14,
+        desc: '¿Principal gas emitido por ganado?',
+        opciones: 'Metano',
+        validar: (pass) => /Metano/i.test(pass)
+    },
+    {
+        id: 15,
+        desc: '¿Que absorbe dioxido de carbono?',
+        opciones: 'arbol',
+        validar: (pass) => /arbol/i.test(pass)
+    },
 ]
