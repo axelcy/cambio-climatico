@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { ProgressBar } from 'react-bootstrap'
 import './Password.css'
-import reglasMock from '../mocks/reglas'
-import Card from '../components/Card'
+import Regla from '../components/Regla'
 import useRules from '../hooks/useRules'
 import useStrength from '../hooks/useStrength'
+import GuardarUsuario from '../components/GuardarUsuario'
 
 function Password() {
     const [reglasActivas, setReglasActivas] = useState([])
@@ -16,9 +16,9 @@ function Password() {
         if (!nuevasReglas.length) {
             return [{
                 id: 'Final',
-                desc: 'Haberse divertido, no hay más reglas por ahora.',
-                ocultarTexto: true,
-                opciones: 'Fin :)',
+                titulo: 'Haberse divertido, no hay más reglas por ahora.',
+                texto: true,
+                subtitulo: 'Fin :)',
                 valida: true
             }]
         }
@@ -61,10 +61,11 @@ function Password() {
             <section className='req-section'>
                 {
                     reglasActivas.map((regla, index) => (
-                        <Card regla={regla} index={index} key={regla.id} valida={regla.valida} />
+                        <Regla regla={regla} index={index} key={regla.id} valida={regla.valida} />
                     ))
                 }
             </section>
+            { strength === 100 &&<GuardarUsuario /> }
         </main>
     )
 }

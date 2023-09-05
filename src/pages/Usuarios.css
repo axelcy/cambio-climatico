@@ -1,0 +1,28 @@
+.usuarios-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(190, 233, 190, 0.9);
+    border: 1px solid green;
+    border-radius: 10px;
+    /* height: 2rem; */
+    margin: 1rem;
+    padding: 1.3rem;
+    width: 50%;
+
+    
+    /* text-overflow: ellipsis; */
+}
+
+.user-password{
+    width: 100%;
+    overflow: auto;
+}

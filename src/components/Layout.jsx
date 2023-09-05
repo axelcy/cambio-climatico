@@ -7,9 +7,9 @@ function Layout() {
         <>
             <Navbar expand="lg" className=" layout-container">
                 <Container className="navbar-brand-container">
-                    <Link className="brand" to={'/'} ><img src="favicon.ico" className="icon" />Home</Link>
-                    {/* <Nav className="me-auto navbar-links"></Nav> */}
-                    <Link className="brand" to={`/reglas`}><img src="rules.png" className="icon" />Reglas</Link>
+                    <Link className="brand no-select" to={'/'} ><img src="favicon.ico" className="icon no-select" /> Home</Link>
+                    <Link className="brand no-select" to={`/reglas`}><img src="rules.png" className="icon no-select" /> Reglas</Link>
+                    <Link className="brand no-select" to={`/usuarios`}><img src="usuarios.png" className="icon no-select" /> Usuarios</Link>
                 </Container>
             </Navbar>
 

@@ -2,7 +2,7 @@ import './Reglas.css'
 import { Button } from 'react-bootstrap'
 import { useEffect, useState } from 'react'
 import useRules from '../hooks/useRules'
-import Card from '../components/Card'
+import Regla from '../components/Regla'
 import { ProgressBar } from 'react-bootstrap'
 
 function Reglas() {
@@ -20,7 +20,7 @@ function Reglas() {
             <article className='article-reglas'>
                 {
                     reglas?.map((regla, index) => (
-                        <Card regla={regla} index={index} key={regla.id} valida={regla.valida} />
+                        <Regla regla={regla} index={index} key={regla.id} valida={regla.valida} />
                     ))
                 }
             </article>
