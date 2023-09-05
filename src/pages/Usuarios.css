@@ -10,8 +10,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(190, 233, 190, 0.9);
-    border: 1px solid green;
+    /* background-color: rgba(190, 233, 190, 0.9); */
+    /* border: 1px solid green; */
+    background-color: rgba(190, 194, 233, 0.9);
+    border: 1px solid blue;
     border-radius: 10px;
     margin: 1rem;
     padding: 1.3rem;
