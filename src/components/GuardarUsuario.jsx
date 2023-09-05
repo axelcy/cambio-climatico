@@ -19,8 +19,8 @@ function GuardarUsuario() {
 
     return (
         <section className='guardar-password-section'>
-            <h4 className="text-bg">Ahora elegí tu nombre de usuario 😊</h4>
-            <div contentEditable='true' className='user-input' ref={userInput} />
+            <h4 className="text-bg">Ahora elegí tu nombre de usuario (esta vez es fácil) 😊</h4>
+            <div contentEditable='true' id="userInput" className='user-input' ref={userInput} />
             <img src="/guardar.jpg" className="img-guardar no-select" draggable={false} onClick={handleSave} />
         </section>
     )
