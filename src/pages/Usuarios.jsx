@@ -1,7 +1,10 @@
 import './Usuarios.css'
 
 function Usuarios() {
-
+    const handleClear = () => {
+        localStorage.clear()
+        location.reload()
+    }
     return (
         <main>
             <label className='no-select'><h1 className='titulo-reglas no-select'>Usuarios ganadores 🏆👨</h1></label>
@@ -17,6 +20,7 @@ function Usuarios() {
                 ))
             }
             </section>
+            <button onClick={handleClear} className='clear-button text-bg no-select'>⚠ REINICIAR JUEGO ⚠</button>
         </main>
     )
 }

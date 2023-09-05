@@ -13,16 +13,24 @@
     background-color: rgba(190, 233, 190, 0.9);
     border: 1px solid green;
     border-radius: 10px;
-    /* height: 2rem; */
     margin: 1rem;
     padding: 1.3rem;
     width: 50%;
-
-    
-    /* text-overflow: ellipsis; */
 }
 
 .user-password{
     width: 100%;
     overflow: auto;
+}
+
+.clear-button{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: rgba(233, 190, 190, 0.9);
+    border: 1px solid red;
+    color: black;
+    height: fit-content;
+    width: 22rem;
+    font-size: 26px;
 }

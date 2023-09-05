@@ -10,8 +10,8 @@ function Reglas() {
     const [reglas, setReglas] = useState([])
     const [strength, setStrength] = useState(0)
     useEffect(() => {
-        setReglas(useRules(localStorage.getItem('password')))
-        setStrength(localStorage.getItem('strength'))
+        setReglas(useRules(localStorage.getItem('password') || ''))
+        setStrength(localStorage.getItem('strength') || 0)
     }, [localStorage.getItem('password')])
 
     return (

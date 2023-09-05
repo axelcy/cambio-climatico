@@ -4,10 +4,12 @@ import { useRef, useState } from "react"
 
 function GuardarUsuario() {
     const userInput = useRef()
-    const [mostrarTexto, setMostrarTexto] = useState(false)
+    const [texto, setTexto] = useState(false)
 
     const handleSave = () => {
-        if (!userInput.current.textContent) return setMostrarTexto(true)
+        // localStorage.clear()
+        if (!userInput.current.textContent) return setTexto('Es necesario ingresar tu nombre.')
+        if (userInput.current.textContent.length > 18) return setTexto('Tu nombre no puede tener más de 18 caracteres.')
         const usuarios = JSON.parse(localStorage.getItem('usuarios')) || []
         usuarios.push({
             nombre: userInput.current.textContent,
@@ -25,7 +27,7 @@ function GuardarUsuario() {
             <div contentEditable='true' id="userInput" className='user-input' ref={userInput} />
             <img src="/guardar.jpg" className="img-guardar no-select" draggable={false} onClick={handleSave} />
             {
-                mostrarTexto && <span className="text-bg">Es necesario ingresar tu nombre.</span>
+                texto && <span className="text-bg">{texto}</span>
             }
         </section>
     )

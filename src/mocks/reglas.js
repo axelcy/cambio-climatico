@@ -1,6 +1,6 @@
 // patter.test(string) => true | false
 // string.match(pattern) => null | array
-
+// asdasdas1♻rrrCO49chadamarilloindustrialglaciaresoctubrereciclajeselvaradiacradiacionmarextincion
 export default [
     {
         titulo: 'La contraseña debe tener al menos 8 caracteres',
@@ -73,10 +73,5 @@ export default [
         texto: 'Corresponde a la definición de:',
         subtitulo: 'Contaminacion / Deforestacion / Extincion',
         validar: (pass) => /Extincion/i.test(pass)
-    },
-    {
-        titulo: '¿El calentamiento global aumenta el nivel del...?',
-        subtitulo: 'Rio / Mar / Lago',
-        validar: (pass) => /Mar/i.test(pass)
-    },
+    }
 ]
