@@ -10,7 +10,7 @@ const Regla = ({regla, valida, index}) => {
                 <span>{regla.texto || regla.texto === null || undefined ? regla.texto : 'La contraseña debe incluir la respuesta correcta.'}</span>
                 <h5>{regla.subtitulo}</h5>
             </>}
-            {regla.img && <img src={"reglas/" + regla.img} className={`card-img card-img-${regla.id}`} />}
+            {regla.img && <img src={"reglas/" + regla.img} className={`card-img card-img-${regla.id}`} draggable={false} />}
         </div>
     )
 }
