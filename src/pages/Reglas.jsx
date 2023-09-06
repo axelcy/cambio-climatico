@@ -26,7 +26,7 @@ function Reglas() {
             </article>
             <ProgressBar className='strengthMeter-reglas no-select' max={100} min={0}
             label={`🔒 Fuerza: ${strength}%`} animated now={strength} />
-            <button onClick={handleScroll} className='scroll-button text-bg no-select'>Voler arriba</button>
+            <button onClick={handleScroll} className='scroll-button text-bg no-select'>Volver arriba</button>
         </main>
     )
 }
