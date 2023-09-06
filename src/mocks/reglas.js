@@ -49,7 +49,7 @@ export default [
         validar: (pass) => /Glaciares/i.test(pass)
     },
     {
-        titulo: 'Hace falta que contenga el día internacional del medio ambiente.',
+        titulo: 'Hace falta que contenga el MES del día internacional del medio ambiente.',
         img: 'regla_11.jpg',
         validar: (pass) => /Octubre/i.test(pass)
     },
