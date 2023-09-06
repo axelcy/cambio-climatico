@@ -1,6 +1,14 @@
 // patter.test(string) => true | false
 // string.match(pattern) => null | array
 // asdasdas1♻rrrCO49chadamarilloindustrialglaciaresoctubrereciclajeselvaradiacradiacionmarextincion
+export const reglaFinal = Object.freeze({
+    id: 'Final',
+    titulo: 'Haberse divertido, no hay más reglas por ahora.',
+    texto: true,
+    subtitulo: 'Fin :)',
+    valida: true
+})
+
 export default [
     {
         titulo: 'La contraseña debe tener al menos 8 caracteres',

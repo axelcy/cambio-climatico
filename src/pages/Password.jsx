@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { ProgressBar } from 'react-bootstrap'
-import './Password.css'
+import GuardarUsuario from '../components/GuardarUsuario'
 import Regla from '../components/Regla'
 import useRules from '../hooks/useRules'
 import useStrength from '../hooks/useStrength'
-import GuardarUsuario from '../components/GuardarUsuario'
+import { reglaFinal } from '../mocks/reglas'
+import './Password.css'
 
 function Password() {
     const [reglasActivas, setReglasActivas] = useState([])
@@ -14,15 +15,7 @@ function Password() {
 
     const handleReglasActivas = (reglas) => {
         let nuevasReglas = reglas.filter(regla => !regla.valida).slice(0, 3)
-        if (!nuevasReglas.length) {
-            return [{
-                id: 'Final',
-                titulo: 'Haberse divertido, no hay más reglas por ahora.',
-                texto: true,
-                subtitulo: 'Fin :)',
-                valida: true
-            }]
-        }
+        if (!nuevasReglas.length) return [reglaFinal]
         let reglasValidas = reglas.filter(regla => regla.valida).reverse()
         reglasValidas.length && nuevasReglas.unshift(reglasValidas[0])
         return nuevasReglas
@@ -49,9 +42,9 @@ function Password() {
     }, [])
 
     const handlePaste = (e) => {
-        e.preventDefault(); // Evitar la acción de pegar predeterminada
-        const text = e.clipboardData.getData('text/plain');
-        document.execCommand('insertText', false, text);
+        e.preventDefault() // Evitar la acción de pegar predeterminada
+        const text = e.clipboardData.getData('text/plain')
+        document.execCommand('insertText', false, text)
     }
 
     return (
