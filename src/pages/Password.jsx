@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ProgressBar } from 'react-bootstrap'
 import './Password.css'
 import Regla from '../components/Regla'
@@ -10,6 +10,7 @@ function Password() {
     const [reglasActivas, setReglasActivas] = useState([])
     const [inputLength, setInputLength] = useState(0)
     const [strength, setStrength] = useState(0)
+    const mainInput = useRef()
 
     const handleReglasActivas = (reglas) => {
         let nuevasReglas = reglas.filter(regla => !regla.valida).slice(0, 3)
@@ -47,12 +48,19 @@ function Password() {
         setStrength(useStrength(localStorage.getItem('password') || ''))
     }, [])
 
+    const handlePaste = (e) => {
+        e.preventDefault(); // Evitar la acción de pegar predeterminada
+        const text = e.clipboardData.getData('text/plain');
+        document.execCommand('insertText', false, text);
+    }
+
     return (
         <main className='password-container no-select'>
             <section className='input-section'>
                 <label htmlFor="mainInput"><h3 className='text-bg'>🔑 Ingrese su contraseña</h3></label>
                 <article className='input-container'>
-                    <div contentEditable='true' placeholder='Ingrese su contraseña' id='mainInput' onInput={handleInputChange} className='main-input' />
+                    <div contentEditable='true' placeholder='Ingrese su contraseña' id='mainInput' ref={mainInput} 
+                        onInput={handleInputChange} onPaste={handlePaste} className='main-input' />
                     <h5 className='text-bg strength'>🔒 Fuerza: {strength}%</h5>
                     <ProgressBar className='strengthMeter' animated now={strength} max={100} min={0} />
                 </article>
