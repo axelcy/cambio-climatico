@@ -2,12 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import { ProgressBar } from 'react-bootstrap'
 import GuardarUsuario from '../components/GuardarUsuario'
 import Regla from '../components/Regla'
+// import usePassword from '../hooks/usePassword'
 import useRules from '../hooks/useRules'
 import useStrength from '../hooks/useStrength'
 import { reglaFinal } from '../mocks/reglas'
 import './Password.css'
 
 function Password() {
+    // const [password, setPassword] = usePassword()
+
     const [reglasActivas, setReglasActivas] = useState([])
     const [inputLength, setInputLength] = useState(0)
     const [strength, setStrength] = useState(0)
@@ -31,7 +34,9 @@ function Password() {
         // handleReglasActivas devuelve un array con las reglas activas
         setReglasActivas(handleReglasActivas(reglas))
         setInputLength(password.length)
+
         localStorage.setItem('password', e.target.textContent)
+        // setPassword(inputPassword)
     }
     
     useEffect(() => {
