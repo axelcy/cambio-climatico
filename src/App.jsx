@@ -8,6 +8,7 @@ import Usuarios from './pages/Usuarios'
 // Más adelante, tal vez implementar logros
 function App() {
   return (
+      <PasswordProvider>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Layout />} >
@@ -18,6 +19,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </PasswordProvider>
   )
 }
 
