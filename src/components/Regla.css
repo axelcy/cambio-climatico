@@ -16,6 +16,7 @@
     transition: transform 1s ease-in-out;
 
     box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(2px);
 }
 .card-valida{
     background-color: rgba(174, 243, 174, 0.9);
